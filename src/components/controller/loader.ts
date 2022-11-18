@@ -1,4 +1,5 @@
 import { Options } from 'webpack';
+import callback from './controller'
 
 interface Options {
     [key: string]: string;

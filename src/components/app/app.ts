@@ -13,9 +13,9 @@ class App {
 
     public start(): void {
         Logger.getInstance().log({ message: 'App started'});
-        const sources = document.querySelector('.sources');
+        const sources = document.querySelector('.sources') as HTMLElement;
         if (sources) {
-            sources.addEventListener('click', (e) =>
+            sources.addEventListener('click', (e:Event) =>
                 this.controller.getNews(e, (data: ArticleCollection) => this.view.drawNews(data))
             );
             Logger.getInstance().log({ message: 'Sources click event listener added' });

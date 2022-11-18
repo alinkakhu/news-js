@@ -1,4 +1,3 @@
-// ważność logu
 export enum Severity {
     ERROR = 'error',
     WARN = 'warn',
