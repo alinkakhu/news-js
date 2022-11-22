@@ -18,8 +18,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 }
-footer .copyright {
+footer .copyright,.gh-link {
     font-size: 14px;
     color: #333;
     text-align: center;
@@ -32,4 +33,7 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+a img{
+    width: 30%;
 }
