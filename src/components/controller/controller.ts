@@ -2,10 +2,10 @@ import { ArticleCollection, SourceCollection } from '../view/appView';
 import AppLoader from './appLoader';
 
 
- export type callback<T,Y>=(arg:T) => Y
+export type Callback<T, Y> = (data: T) => Y;
 
 class AppController extends AppLoader {
-    public getSources(callback: callback<SourceCollection,void>): void {
+    public getSources(callback: Callback<SourceCollection,void>): void {
         super.getResp(
             {
                 endpoint: 'sources',
@@ -14,7 +14,7 @@ class AppController extends AppLoader {
         );
     }
 
-    public getNews(e: Event, callback: callback<ArticleCollection,void>): void {
+    public getNews(e: Event, callback: Callback<ArticleCollection,void>): void {
         let target = e.target as HTMLElement;
         const newsContainer = e.currentTarget as HTMLElement;
 

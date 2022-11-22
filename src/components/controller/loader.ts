@@ -1,5 +1,5 @@
 import { Options } from 'webpack';
-import callback from './controller'
+import {Callback} from './controller'
 
 interface Options {
     [key: string]: string;
@@ -19,10 +19,10 @@ class Loader {
         this.options = options;
     }
 
-    getResp(
+    getResp<T, Y>(
         { endpoint, options = {} }: ResponseObj,
-        callback: Function = (): void => {
-            console.error('No callback for GET response');
+        callback: Callback<T, Y> = (t: T): Y => {
+            return null as Y;
         }
     ): void {
         this.load('GET', endpoint, callback, options);
